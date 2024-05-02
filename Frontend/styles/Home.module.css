@@ -72,3 +72,41 @@
   cursor: pointer;
   padding: 5px
 }
+
+.signUpModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #2b089e;
+  padding: 10px 40px 40px 40px;
+  border-radius: 10px;
+  position: fixed;
+  left: 36vw;
+  z-index: 2
+}
+
+.signInModal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #2b089e;
+  padding: 10px 60px 40px 60px;
+  border-radius: 10px;
+  position: fixed;
+  left: 37vw;
+  z-index: 2
+}
+
+.fontAIconUP {
+  position: relative;
+  left: 195px;
+  font-size: 1.3em;
+}
+
+.fontAIconIN {
+  position: relative;
+  left: 165px;
+  font-size: 1.3em;
+}
