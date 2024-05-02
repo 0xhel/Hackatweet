@@ -68,6 +68,7 @@
   font-weight: 600;
   color: white;
   background-color: transparent;
-  border: none;
+  border: 1px solid transparent;
   cursor: pointer;
+  padding: 5px
 }
