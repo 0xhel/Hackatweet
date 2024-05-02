@@ -23,14 +23,6 @@ const persistor = persistStore(store)
 
 function App({ Component, pageProps }) {
   return (
-<<<<<<< HEAD
-    <>
-      <Head>
-        <title>Hackatweet</title>
-      </Head>
-      <Component {...pageProps} />
-    </>
-=======
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <Head>
@@ -39,7 +31,6 @@ function App({ Component, pageProps }) {
         <Component {...pageProps} />
       </PersistGate>
     </Provider>
->>>>>>> e397f43139c268d778baf9004218be8a8bb81fc3
   );
 }
 
