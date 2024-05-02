@@ -14,6 +14,7 @@
   background-image: url('../public/twitter_bg.webp');
   display: flex;
   justify-content: center;
+  align-items: center;
 
 
 
@@ -31,7 +32,7 @@
   background-color: #15202b;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
 
 }
 
@@ -39,6 +40,12 @@
 .title {
   line-height: 1.15;
   font-size: 4rem;
+  font-family: 'Futura';
+  color: white;
+  font-size: 70px;
+  width: 50%;
+  margin-top: 20px;
+  margin-bottom: 20px
 }
 
 .title a {
@@ -50,4 +57,15 @@
 .title a:focus,
 .title a:active {
   text-decoration: underline;
+}
+
+
+.button {
+  height: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(242, 185, 54);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
