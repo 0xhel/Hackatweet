@@ -11,7 +11,7 @@ function Home() {
           width={300} />
       </div>
       <div className={styles.rightHome} >
-        <img className={styles.rigthLogo} src='/logo_twitter.webp'
+        <img className={styles.rightLogo} src='/logo_twitter.webp'
         />
         <h1 className={styles.title}>See what's happening.</h1>
         <h3>Join Hackatweet today</h3>
