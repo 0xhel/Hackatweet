@@ -35,7 +35,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
+  padding-left: 40px;
+  padding-top: 40px;
 }
 
 
@@ -46,9 +47,35 @@
   color: white;
   font-size: 70px;
   width: 50%;
-  margin-top: 20px;
-  margin-bottom: 20px
+  margin-top: 80px;
+  margin-bottom: 45px
 }
+
+.h3 {
+  line-height: 1.15;
+  font-size: 4rem;
+  font-family: 'Futura';
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  width: 50%;
+
+  margin-bottom: 15px
+}
+
+.text {
+  line-height: 1.15;
+  font-size: 4rem;
+  font-family: 'Futura';
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 15px
+}
+
+
 
 .title a {
   color: #0070f3;
@@ -62,15 +89,32 @@
 }
 
 
-.button {
-  height: 25px;
+.buttonSignup {
+  height: 40px;
+  width: 200px;
   font-size: 16px;
   font-weight: 600;
   color: white;
-  background-color: transparent;
-  border: 1px solid transparent;
+  background-color: #3e9af0;
+  border: 1px solid #58616a;
   cursor: pointer;
-  padding: 5px
+
+  border-radius: 25px;
+  text-align: center;
+}
+
+.buttonSignin {
+  height: 40px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3e9af0;
+  background-color: #15202b;
+  border: 1px solid #58616a;
+  cursor: pointer;
+
+  border-radius: 25px;
+  text-align: center;
 }
 
 .signUpModal {

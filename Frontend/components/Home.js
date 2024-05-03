@@ -33,11 +33,11 @@ function Home() {
         <img className={styles.rightLogo} src='/logo_twitter.webp'
         />
         <h1 className={styles.title}>See what's happening.</h1>
-        <h3>Join Hackatweet today</h3>
-        <button className={styles.button} type='button' onClick={() => setOpenUpModal(true)}>Sign up</button>
+        <h3 className={styles.h3}>Join Hackatweet today.</h3>
+        <button className={styles.buttonSignup} type='button' onClick={() => setOpenUpModal(true)}>Sign up</button>
 
-        <p>Already have an account ?</p>
-        <button className={styles.button} type='button' onClick={() => setOpenInModal(true)}> Sign in</button>
+        <p className={styles.text}>Already have an account ?</p>
+        <button className={styles.buttonSignin} type='button' onClick={() => setOpenInModal(true)}> Sign in</button>
 
 
       </div>
