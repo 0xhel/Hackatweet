@@ -1,10 +1,10 @@
-import styles from '../styles/Index.module.css';
+import styles from '../styles/Home.module.css';
 import Image from 'next/image'
 import { useState } from 'react';
 import ModalUp from './ModalUp'
 import ModalIn from './ModalIn'
 
-function Index() {
+function Home() {
 
   const [openUpModal, setOpenUpModal] = useState(false)
   const [openInModal, setOpenInModal] = useState(false)
@@ -49,4 +49,4 @@ function Index() {
   );
 }
 
-export default Index;
+export default Home;

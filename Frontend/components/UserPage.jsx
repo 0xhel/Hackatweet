@@ -1,10 +1,10 @@
 import { Main } from 'next/document';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/UserPage.module.css';
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-function Home() {
+function UserPage() {
 
 
 
@@ -50,8 +50,8 @@ function Home() {
                             <p>{'firstname here'} {'@username here'} • {'Time tweet here'}</p>
                             <p>{'tweet content here'}</p>
                             <div>
-                                <FontAwesomeIcon icon={faHeart} className={styles} />
-                                <FontAwesomeIcon icon={faTrashCan} className={styles} />
+                                <FontAwesomeIcon icon={faHeart} />
+                                <FontAwesomeIcon icon={faTrashCan} />
                             </div>
                         </div>
                     </div>
@@ -76,4 +76,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default UserPage;
