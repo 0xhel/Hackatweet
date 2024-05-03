@@ -39,11 +39,11 @@ function UserPage() {
 
             <div className={styles.mainBoard}>
                 <div className={styles.header}>
-                    <h3>Home</h3>
+                    <h3 className={styles.homeTitle}>Home</h3>
                     <input type='text' placeholder="What's up?" ></input>
                     <div>
-                        <span>{'count'}/280</span>
-                        <button>Tweet</button>
+                        <span className={styles.countTxt}>{'count'}/280</span>
+                        <button className={styles.tweetBtn}>Tweet</button>
                     </div>
                 </div>
                 <div className={styles.tweetContainer}>

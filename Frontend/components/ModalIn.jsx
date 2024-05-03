@@ -5,16 +5,21 @@ import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { login } from '../reducers/user';
-import Link from 'next/link'
+
+
 
 function ModalIn(props) {
+
     const dispatch = useDispatch();
     const user = useSelector((state) => state.user.value);
+
 
     const [signInUsername, setSignInUsername] = useState('');
     const [signInPassword, setSignInPassword] = useState('');
 
+
     const handleRegister = () => {
+
         fetch('http://localhost:3000/signin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -22,10 +27,17 @@ function ModalIn(props) {
 
         }).then(response => response.json())
             .then(data => {
+                console.log(data)
                 if (data.result) {
+
+                    console.log(signInUsername)
+
                     dispatch(login({ username: signInUsername, token: data.token }));
+
                     setSignInUsername('');
                     setSignInPassword('');
+
+
                 }
 
             })
@@ -48,7 +60,7 @@ function ModalIn(props) {
             <h2>Connect to Hackatweet</h2>
             <input type="text" placeholder="Username" id="signInUsername" onChange={(e) => setSignInUsername(e.target.value)} value={signInUsername} />
             <input type="password" placeholder="Password" id="signInPassword" onChange={(e) => setSignInPassword(e.target.value)} value={signInPassword} />
-            <button id="register" onClick={() => handleRegister()}><Link href="/userpage" >Sign in</Link></button>
+            <button id="register" onClick={() => handleRegister()}>Sign in</button>
         </div>
 
     )

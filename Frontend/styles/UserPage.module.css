@@ -83,7 +83,34 @@
     border-bottom: 1px solid #58616a;
     width: 100%;
     height: 25%;
+
+    padding-left: 30px;
+}
+
+.homeTitle {
+    font-size: 35px;
     font-family: 'Futura';
     color: white;
-    padding-left: 30px;
+    font-weight: 500;
+
+
+}
+
+.countTxt {
+    font-size: 15px;
+    font-family: 'Futura';
+    color: white;
+    font-weight: 100;
+
+}
+
+.tweetBtn {
+    border-radius: 25px;
+    border: 1px solid #58616a;
+    background-color: #3e9af0;
+    color: white;
+    font-weight: 800;
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
 }
