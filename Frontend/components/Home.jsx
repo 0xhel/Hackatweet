@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-function MainPage() {
+function Home() {
 
 
 
@@ -43,8 +43,8 @@ function MainPage() {
                             <p>{'firstname here'} {'@username here'} • {'Time tweet here'}</p>
                             <p>{'tweet content here'}</p>
                             <div>
-                                <FontAwesomeIcon icon={faHeart} style={iconStyle} className={styles} />
-                                <FontAwesomeIcon icon={faTrashCan} style={iconStyle} className={styles} />
+                                <FontAwesomeIcon icon={faHeart} className={styles} />
+                                <FontAwesomeIcon icon={faTrashCan} className={styles} />
                             </div>
                         </div>
                     </div>
@@ -69,4 +69,4 @@ function MainPage() {
     );
 }
 
-export default MainPage;
+export default Home;

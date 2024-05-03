@@ -4,7 +4,7 @@ import { useState } from 'react';
 import ModalUp from './ModalUp'
 import ModalIn from './ModalIn'
 
-function Home() {
+function Index() {
 
   const [openUpModal, setOpenUpModal] = useState(false)
   const [openInModal, setOpenInModal] = useState(false)
@@ -49,4 +49,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Index;
