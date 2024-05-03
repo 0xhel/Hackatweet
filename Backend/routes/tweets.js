@@ -3,22 +3,32 @@ var router = express.Router();
 
 require('../models/connection');
 const Tweet = require('../models/tweets');
+const User = require('../models/users');
 const { checkBody } = require("../modules/checkBody");
 
-router.post("/tweets", (req, res) => {
+router.post("/tweets", async (req, res) => {
+
     if (!checkBody(req.body, ['tweetContent'])) {
         return res.json({ result: false, error: 'Missing or empty fields' });
     }
 
-    const newTweet = new Tweet({
-        tweetContent: req.body.tweetContent
-    });
-
-    newTweet.save((savedTweet) => {
-        if (!savedTweet) {
-            return res.json({ result: false, error: 'Error saving tweet' });
+    User.findOne({ username: req.body.username }).then(user => {
+        if (!user) {
+            return res.json({ result: false, error: "User doesn't exist" });
         }
-        return res.json({ result: true, tweet: savedTweet });
+
+        const newTweet = new Tweet({
+            firstname: req.body.firstname,
+            username: req.body.username,
+            date: req.body.date,
+            tweetContent: req.body.tweetContent,
+            hashtags: req.body.hashtags,
+            like: req.body.like,
+        });
+
+        newTweet.save().then(savedTweet => {
+            return res.json({ result: true, tweet: savedTweet });
+        });
     });
 });
 
