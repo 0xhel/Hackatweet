@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useState } from 'react';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Index.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 

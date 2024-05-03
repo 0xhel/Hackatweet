@@ -1,5 +1,5 @@
 import { Main } from 'next/document';
-import styles from '../styles/MainPage.module.css';
+import styles from '../styles/Home.module.css';
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
@@ -15,10 +15,15 @@ function Home() {
 
             <div className={styles.leftBoard}>
                 <div>
-                    <Image src="/logo_twitter.webp" />
+                    <Image src="/logo_twitter.webp"
+                        height={250}
+                        width={300}
+                    />
                 </div>
                 <div>
-                    <Image className={styles.profilPic} src="/egg.jpg" />
+                    <Image className={styles.profilPic} src="/egg.jpg"
+                        height={250}
+                        width={300} />
                     <p>{'firstname here'}</p>
                     <p>{'@username here'}</p>
                 </div>
@@ -39,7 +44,9 @@ function Home() {
                 <div className={styles.tweetContainer}>
                     <div className={styles.tweet} >
                         <div>
-                            <Image className={styles.profilPic} src="/egg.jpg" />
+                            <Image className={styles.profilPic} src="/egg.jpg"
+                                height={250}
+                                width={300} />
                             <p>{'firstname here'} {'@username here'} • {'Time tweet here'}</p>
                             <p>{'tweet content here'}</p>
                             <div>
