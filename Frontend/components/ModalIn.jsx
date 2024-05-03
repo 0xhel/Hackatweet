@@ -29,19 +29,12 @@ function ModalIn(props) {
             .then(data => {
                 console.log(data)
                 if (data.result) {
-
-                    console.log(signInUsername)
-
                     dispatch(login({ username: signInUsername, token: data.token }));
-
                     setSignInUsername('');
                     setSignInPassword('');
-
-
                 }
 
             })
-
 
     }
 

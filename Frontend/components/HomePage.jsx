@@ -1,10 +1,28 @@
 import { Main } from 'next/document';
 import styles from '../styles/UserPage.module.css';
 import Image from 'next/image'
+import { useState, } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import Tweet from './Tweet';
+import { logout } from '../reducers/user'
 
 function UserPage() {
+    const dispatch = useDispatch()
+    const [counter, setCounter] = useState('')
+
+
+    function handleLogout() {
+        dispatch(logout())
+
+    }
+
+
+
+
+
+
 
 
 
@@ -32,7 +50,7 @@ function UserPage() {
                         </div>
                     </div>
                     <div>
-                        <button type='button' className={styles.logout}>Logout</button>
+                        <button type='button' onClick={() => handleLogout()} className={styles.logout}>Logout</button>
                     </div>
                 </div>
             </div>
@@ -40,37 +58,24 @@ function UserPage() {
             <div className={styles.mainBoard}>
                 <div className={styles.header}>
                     <h3 className={styles.homeTitle}>Home</h3>
-                    <input type='text' placeholder="What's up?" ></input>
-                    <div>
-                        <span className={styles.countTxt}>{'count'}/280</span>
+                    <input onChange={(e) => setCounter(e.target.value)} value={counter} className={styles.tweetInput} type='text' maxLength={280} placeholder="What's up?" ></input>
+                    <div className={styles.tweetBtnContainer} >
+                        <span className={styles.countTxt}>{counter.length}/280</span>
                         <button className={styles.tweetBtn}>Tweet</button>
                     </div>
                 </div>
                 <div className={styles.tweetContainer}>
-                    <div className={styles.tweet} >
-                        <div>
-                            <Image className={styles.profilPic} src="/egg.jpg"
-                                height={250}
-                                width={300} />
-                            <p>{'firstname here'} {'@username here'} • {'Time tweet here'}</p>
-                            <p>{'tweet content here'}</p>
-                            <div>
-                                <FontAwesomeIcon icon={faHeart} />
-                                <FontAwesomeIcon icon={faTrashCan} />
-                            </div>
-                        </div>
-                    </div>
+
+
+
 
                 </div>
             </div>
 
             <div className={styles.rightBoard}>
-                <h3>Trends</h3>
+                <h3 className={styles.homeTitle}>Trends</h3>
                 <div className={styles.trendContainer}>
-                    <div className={styles.trend}>
-                        <p>{'trend name here'}</p>
-                        <span>{'counter here'} Tweet{'s if multiple func'}</span>
-                    </div>
+
 
                 </div>
 
