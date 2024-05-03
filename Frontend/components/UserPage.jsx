@@ -14,21 +14,26 @@ function UserPage() {
         <div className={styles.boardContainer}>
 
             <div className={styles.leftBoard}>
-                <div>
-                    <Image src="/logo_twitter.webp"
-                        height={250}
-                        width={300}
+                <div className={styles.leftTop} >
+                    <img className={styles.logo} src="/logo_twitter.webp"
+
                     />
                 </div>
-                <div>
-                    <Image className={styles.profilPic} src="/egg.jpg"
-                        height={250}
-                        width={300} />
-                    <p>{'firstname here'}</p>
-                    <p>{'@username here'}</p>
-                </div>
-                <div>
-                    <button type='button'>Logout</button>
+                <div className={styles.leftBottom}>
+                    <div className={styles.subleftBottom}>
+                        <div className={styles.profilPic}>
+                            <Image className={styles.profilPic} src="/egg.jpeg"
+                                height={57}
+                                width={60} />
+                        </div>
+                        <div>
+                            <p className={styles.firstname}>{'firstname here'}</p>
+                            <p className={styles.username}>{'@username here'}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <button type='button' className={styles.logout}>Logout</button>
+                    </div>
                 </div>
             </div>
 
