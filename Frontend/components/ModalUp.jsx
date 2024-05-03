@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
+import { login } from '../reducers/user';
+import Link from 'next/link'
 
 function ModalUp(props) {
     const dispatch = useDispatch();
@@ -14,7 +16,7 @@ function ModalUp(props) {
     const [signUpPassword, setSignUpPassword] = useState('');
 
     const handleRegister = () => {
-        fetch('http://localhost:3000/users/signup', {
+        fetch('http://localhost:3000/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username: signUpUsername, firstname: signUpFirstname, password: signUpPassword }),
@@ -25,11 +27,10 @@ function ModalUp(props) {
                     dispatch(login({ username: signUpUsername, firstname: signUpFirstname, token: data.token }));
                     setSignUpUsername('');
                     setSignUpPassword('');
-                    return <Link href="../pages/userpage" />
-
                 }
 
             })
+
 
     }
 
@@ -47,8 +48,8 @@ function ModalUp(props) {
             <input type="text" placeholder="Firstname" id="signUpFirstname" onChange={(e) => setSignUpFirstname(e.target.value)} value={signUpFirstname} />
             <input type="text" placeholder="Username" id="signUpUsername" onChange={(e) => setSignUpUsername(e.target.value)} value={signUpUsername} />
             <input type="password" placeholder="Password" id="signUpPassword" onChange={(e) => setSignUpPassword(e.target.value)} value={signUpPassword} />
-            <button id="register" onClick={() => handleRegister()}>Sign up</button>
-        </div>
+            <button id="register" onClick={() => handleRegister()}><Link href="/userpage" >Sign up</Link></button >
+        </div >
 
     )
 
