@@ -1,11 +1,12 @@
+import Login from '../components/Login';
 import Home from '../components/Home';
-import { useDispatch, useSelector } from 'react-redux';
-import HomePage from '../components/HomePage';
+import { useSelector } from 'react-redux';
 
 
-function Index() {
-  const user = useSelector((state) => state.user.value);
-  return user.token ? <HomePage /> : <Home />;
+export default function Index() {
+  const user = useSelector((state) => state.user);
+  console.log('USER', user)
+  return user.token ? <Home /> : <Login />;
 }
 
-export default Index;
+

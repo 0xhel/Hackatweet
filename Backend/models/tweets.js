@@ -2,12 +2,14 @@ const mongoose = require('mongoose');
 
 //Model tweets for comments collection
 const tweetSchema = mongoose.Schema({
-    username: String,
-    firstname: String,
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users'
+    },
     date: Date,
     tweetContent: String,
-    hashtags: String,
-    like: Number,
+    isLiked: Boolean,
+    likeNumber: Number,
 });
 
 const Tweet = mongoose.model('Tweet', tweetSchema);

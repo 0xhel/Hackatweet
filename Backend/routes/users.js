@@ -5,10 +5,11 @@ require('../models/connection')
 const User = require('../models/users')
 const { checkBody } = require("../modules/checkBody")
 const uid2 = require("uid2")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
+const { Hash } = require('crypto');
 
 
-//Checkbody fo the signup & setup of the signup endpoint
+//Checkbody for the signup & setup of the signup endpoint
 router.post("/signup", (req, res) => {
   if (!checkBody(req.body, ['username', 'password', 'firstname'])) {
     res.json({ result: false, error: 'Missing or empty fields' });
@@ -21,8 +22,9 @@ router.post("/signup", (req, res) => {
       const newUser = new User({
         firstname: req.body.firstname,
         username: req.body.username,
-        password: hash,
+        hash: hash,
         token: uid2(32),
+        likedTweets: [],
       });
 
       newUser.save().then(newDoc => {
@@ -35,7 +37,7 @@ router.post("/signup", (req, res) => {
   });
 });
 
-//Checkbody fo the signin & setup of the signin endpoint
+//Checkbody for the signin & setup of the signin endpoint
 router.post('/signin', (req, res) => {
   if (!checkBody(req.body, ['username', 'password'])) {
     res.json({ result: false, error: 'Missing or empty fields' });
@@ -43,13 +45,25 @@ router.post('/signin', (req, res) => {
   }
 
   User.findOne({ username: req.body.username }).then(data => {
-    if (data && bcrypt.compareSync(req.body.password, data.password)) {
-      res.json({ result: true, token: data.token });
+    console.log(data)
+    if (data && bcrypt.compareSync(req.body.password, data.hash)) {
+      res.json({ result: true, user: data });
     } else {
       res.json({ result: false, error: 'User not found or wrong password' });
     }
   });
 });
+
+
+router.post('/myLikedTweets', (req, res) => {
+  User.findOne({ username: req.body.username })
+    .then(user => {
+      res.json({
+        result: true,
+        liked: user.likedTweets
+      })
+    })
+})
 
 module.exports = router;
 
