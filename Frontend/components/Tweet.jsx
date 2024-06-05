@@ -16,17 +16,7 @@ export default function Tweet(props) {
     useEffect(() => {
         setIsLiked(props.liked)
         setLikeNumber(props.likeNumber)
-        /*fetch(`http://localhost:3000/users/myLikedTweets`, {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({
-                username: user.username
-            })
-        }).then(resp => resp.json())
-            .then(data => {
-                dispatch(setLikedTweet(data.liked))
-                console.log(data.liked)
-            })*/
+
 
     }, [])
 
